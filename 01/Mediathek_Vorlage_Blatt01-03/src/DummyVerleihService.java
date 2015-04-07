@@ -15,8 +15,10 @@ class DummyVerleihService extends AbstractObservableService implements
     // Generator für Zufallszahlen und zufällige boolsche Werte
     private static final Random RANDOM = new Random();
 
+    // Beispiel-Medium
     private static final CD MEDIUM = new CD("Titel", "Kommentar", "Interpret",
             70);
+    //Beispiel-Daten
     private static final Kundennummer KUNDENNUMMER = new Kundennummer(123456);
     private static final Kunde ENTLEIHER = new Kunde(KUNDENNUMMER, "Vorname",
             "Nachname");
@@ -29,6 +31,14 @@ class DummyVerleihService extends AbstractObservableService implements
     {
     }
 
+    
+    
+    /**
+     * Gibt eine Liste mit einem Item zurück (siehe MEDIUM)
+     * 
+     * @param kunde Der Parameter wird ignoriert
+     * @return ergebnisListe enthaelt einen Eintrag
+     */
     @Override
     public List<Medium> getAusgelieheneMedienFuer(Kunde kunde)
     {
@@ -37,18 +47,34 @@ class DummyVerleihService extends AbstractObservableService implements
         return ergebnisListe;
     }
 
+    
+    /**
+     * Gibt einen Dummy Kunden zurück
+     * @param medium wird ignoriert
+     * @return gibt immer VERLEIHER zurück
+     */
     @Override
     public Kunde getEntleiherFuer(Medium medium)
     {
         return ENTLEIHER;
     }
 
+    /**
+     * Gibt eine Dummy Verleihkarte zurück
+     * @param medium wird ignoriert
+     * @return gibt immer VERLEIHKARTE zurück 
+     */
     @Override
     public Verleihkarte getVerleihkarteFuer(Medium medium)
     {
         return VERLEIHKARTE;
     }
 
+    
+    /**
+     * Gibt eine Liste mit einem Item zurück
+     * @return ergebnisListe mit VERLEIHKARTE
+     */
     @Override
     public List<Verleihkarte> getVerleihkarten()
     {
@@ -57,46 +83,92 @@ class DummyVerleihService extends AbstractObservableService implements
         return ergebnisListe;
     }
 
+    
+    /**
+     * Gibt einen zufälligen Wahrheitswert zurück
+     * @param medium wird ignoriert
+     * @return zufälliger Wahrheitswert (true, false)
+     */
     @Override
     public boolean istVerliehen(Medium medium)
     {
         return RANDOM.nextBoolean();
     }
 
+    
+    /**
+     * Dummy
+     * @param medien wird ignoriert
+     * @param rueckgabeDatum wird ignoriert
+     */
     @Override
     public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum)
     {
     }
 
+    /**
+     * 
+     * Gibt einen zufälligen Wahrheitswert zurück
+     * @param medien wird ignoriert
+     * @return zufälliger Wahrheitswert (true, false)
+     */
     @Override
     public boolean sindAlleNichtVerliehen(List<Medium> medien)
     {
         return RANDOM.nextBoolean();
     }
 
+    /**
+     * 
+     * Gibt einen zufälligen Wahrheitswert zurück
+     * @param medien wird ignoriert
+     * @return zufälliger Wahrheitswert (true, false)
+     */
     @Override
     public boolean sindAlleVerliehen(List<Medium> medien)
     {
         return RANDOM.nextBoolean();
     }
 
+    /**
+     * Dummy
+     * @param kunde wird ignoriert
+     * @param medien wird ignoriert
+     * @param ausleihDatum wird ignoriert
+     */
     @Override
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
     {
     }
 
+    /**
+     * prüft ob Kunde ENTLEIHER entspricht
+     * @param kunde Der zu prüfende Kunde
+     * @return gibt true zurück wenn kunde ENTLEIHER ist
+     */
     @Override
     public boolean kundeImBestand(Kunde kunde)
     {
         return ENTLEIHER.equals(kunde);
     }
 
+
+    /**
+     * prüft ob medium MEDIUM entspricht
+     * @param medium das zu prüfende Medium
+     * @return gibt true zurück wenn medium MEDIUM entspricht
+     */
     @Override
     public boolean mediumImBestand(Medium medium)
     {
         return MEDIUM.equals(medium);
     }
 
+    /**
+     * prüft ob alle Medien in der Liste im Bestand vorhanden sind
+     * @param medien die zu überprüfende Liste
+     * @return gibt false zurück wenn min ein Medium nicht im Bestand ist
+     */
     @Override
     public boolean medienImBestand(List<Medium> medien)
     {
@@ -112,6 +184,11 @@ class DummyVerleihService extends AbstractObservableService implements
         return result;
     }
 
+    /**
+     * gibt eine Liste mit einem Item zurück
+     * @param kunde wird ignoriert
+     * @return gibt eine Liste mit VERLEIHKARTE zurück
+     */
     @Override
     public List<Verleihkarte> getVerleihkartenFuer(Kunde kunde)
     {
@@ -120,6 +197,12 @@ class DummyVerleihService extends AbstractObservableService implements
         return result;
     }
 
+    /**
+     * Dummy
+     * @param kunde wird ignoriert
+     * @param medien wird ignoriert
+     * @return gibt false zurück
+     */
     @Override
     public boolean istVerleihenMoeglich(Kunde kunde, List<Medium> medien)
     {
