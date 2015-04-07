@@ -1,6 +1,4 @@
-INDEX VERSION 1.127+C:\Users\wahrwolf\Documents\Uni\SoSe-15\SE2\Aufgaben\.metadata\.plugins\org.eclipse.jdt.core
-1689304706.index
+INDEX VERSION 1.127+Z:\SE2\Aufgaben\.metadata\.plugins\org.eclipse.jdt.core
 3999496833.index
-2362505726.index
+2571136588.index
 2567076152.index
-111131114.index
