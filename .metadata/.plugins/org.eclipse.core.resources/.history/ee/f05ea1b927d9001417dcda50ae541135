@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+
+public class LineareGleichung {
+	
+	//Array mit
+	private ArrayList<Object> _koeffizienten;
+
+	public LineareGleichung(ArrayList<Object> _koeffizient) {
+		_koeffizienten = _koeffizient;
+	}
+	
+
+	public
+	
+
+}

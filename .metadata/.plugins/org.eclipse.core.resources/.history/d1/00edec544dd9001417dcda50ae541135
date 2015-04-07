@@ -1,0 +1,32 @@
+
+public class Term {
+	
+	private double _koeffizient;
+	private String _variable;
+
+	
+	public Term(double _koeffizient, String _variable) {
+		this._koeffizient = _koeffizient;
+		this._variable = _variable;
+	}
+
+	public double getKoeffizient(int index)
+	{
+		return _koeffizient;
+	}
+	
+	public void setKoeffizient(double value)
+	{
+		_koeffizient = value;
+	}
+	
+	public String getVariable(double value)
+	{
+		return _variable;
+	}
+	
+	public String toString()
+	{
+		return _koeffizient + _variable;
+	}
+}

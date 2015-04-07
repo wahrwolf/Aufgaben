@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+
+public class LineareGleichung {
+	
+	//Array mit
+	private Object[] _koeffizienten;
+
+	public LineareGleichung(Object[] _koeffizient) {
+		_koeffizienten = _koeffizient;
+	}
+	
+
+	public Object getKoeffizient(int index)
+	{
+		return _koeffizienten[index];
+	}
+	
+	public LineareGleichung multiplizieren(Object object)
+	{
+		if (object instanceof _koeffizienten.getClass() )
+		{
+			if (object instanceof Integer) 
+			{
+				int faktor = (int) object;
+			}			
+			if (object instanceof Float) 
+			{
+				float faktor = (float) object;
+			}
+			if (object instanceof Double)
+			{
+				double faktor = (double) object;
+			}
+	}
+	}
+
+}

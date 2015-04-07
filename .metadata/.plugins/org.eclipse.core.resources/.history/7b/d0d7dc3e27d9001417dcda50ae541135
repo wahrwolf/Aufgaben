@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+
+public class LinearesGleichungsSystem {
+	
+	private ArrayList<LineareGleichung> _gleichungen;
+
+	public LinearesGleichungsSystem(ArrayList<LineareGleichung> _gleichungen) {
+		this._gleichungen = _gleichungen;
+	}
+	
+	public Object getKoeffizent(int zeilenindex, int spaltenindex)
+	{
+		return _gleichungen.get(zeilenindex).getKoeffizient(spaltenindex);
+	}
+
+}

@@ -1,0 +1,32 @@
+import java.util.List;
+import java.util.Set;
+
+public class EndlicherAutomat implements Automat
+{
+    private AutomatenZustand _startZustand;
+    private AutomatenZustand _aktuellerZustand;
+    private Set<String> _sprache;
+ 
+
+    @Override
+    public AutomatenZustand getStartZustand()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    public
+
+    public void wechsleZustand(char kante)
+    {
+        _aktuellerZustand = _aktuellerZustand.folgeZustand(kante);
+    }
+
+    @Override
+    public List<AutomatenZustand> getEndZustand()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

@@ -1,0 +1,28 @@
+
+
+public class LineareGleichung {
+	
+	//Array mit
+	private Double[] _koeffizienten;
+
+	public LineareGleichung(Double[] _koeffizient) {
+		_koeffizienten = _koeffizient;
+	}
+	
+
+	public Object getKoeffizient(int index)
+	{
+		return _koeffizienten[index];
+	}
+	
+	public LineareGleichung multiplizieren(Double faktor)
+	{
+		for(double koeffizient : _koeffizienten)
+		{
+			koeffizient *= faktor;
+		}
+		
+		return this;
+	}
+
+}
