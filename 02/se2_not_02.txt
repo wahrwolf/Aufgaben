@@ -1,0 +1,11 @@
+zu 2.1.2
+mit @require werden Voraussetzungen formuliert
+mit @ensure nachhbedingunen
+
+Vorbedinungen werden am Methodenanfang geprüft.
+Nachbedinungen werden nur in der Testklasse überprüft.
+
+Beide sind so geschrieben dass man sie direkt (oder zumindest leicht) in Code umsetzen kann.
+
+Semantik:
+@[(require)(ensure)] [(methode)(Feld)] [!=]= [(methode)(Feld)]
