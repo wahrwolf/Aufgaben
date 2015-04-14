@@ -25,6 +25,7 @@ public class VerleihServiceImplTest
     private Medium _abbey;
     private Medium _bad;
     private Medium _shape;
+    private List<Medium> _medien;
     private MedienbestandService _medienbestand;
 
     private VerleihServiceImpl _verleihService;
@@ -67,13 +68,29 @@ public class VerleihServiceImplTest
     }
 
     @Test
-    public void testNochEinTestFall2()
+    public void testMediumZurueckGeben()
     {
+        Datum dateAus = new Datum(1,3,1937);
+        Datum dateIn = new Datum(1,1,1942);
+        _verleihService.verleiheAn(_homer, _medien, dateAus);
+        _verleihService.nimmZurueck(_medien, dateIn);
+        assertTrue(_verleihService.istVerleihenMoeglich(_homer, _medien));
+
+        
     }
 
     @Test
-    public void testNochEinTestFall3()
+    public void testMediumAusleihen()
     {
+        Datum date = new Datum(1,3,1937);
+        _verleihService.verleiheAn(_homer, _medien, date);
+        
+        assertTrue(_verleihService.sindAlleVerliehen(_medien));
+        assertTrue(_verleihService.getEntleiherFuer(_medien.get(0)).equals(_homer));
+        assertTrue(_verleihService.getVerleihkarteFuer(_medien.get(0)).getAusleihdatum().equals(date));
+        assertFalse(_verleihService.istVerleihenMoeglich(_homer, _medien));
+        
+        
     }
 
     private void setUpKunden()
@@ -97,7 +114,7 @@ public class VerleihServiceImplTest
         _shape = new CD("The Colour And The Shape", "bestes Album der Gruppe",
                 "Foo Fighters", 46);
 
-        List<Medium> _medien = new ArrayList<Medium>();
+        _medien = new ArrayList<Medium>();
         _medien.add(_abbey);
         _medien.add(_bad);
         _medien.add(_shape);

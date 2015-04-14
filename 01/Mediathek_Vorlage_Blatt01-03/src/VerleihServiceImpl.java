@@ -133,8 +133,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
         assert ausleihDatum != null : "Vorbedingen verletzt"; 
         for (Medium medium : medien)
         {
-            Verleihkarte karte = new Verleihkarte(kunde, medium, ausleihDatum);
-
+            _verleihkarten.put(medium, new Verleihkarte(kunde, medium, ausleihDatum));
         }
 
         informiereUeberAenderung();
