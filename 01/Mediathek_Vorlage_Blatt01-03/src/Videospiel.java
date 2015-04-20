@@ -1,7 +1,6 @@
-
 public class Videospiel implements Medium
 {
-    
+
     /**
      * Die Konsole auf der das Videospiel lauffähig ist.
      */
@@ -41,7 +40,8 @@ public class Videospiel implements Medium
      * @ensure getRegisseur() == studio
      * @ensure getKonsole() == konsole
      */
-    public Videospiel(String titel, String kommentar, String studio, String konsole)
+    public Videospiel(String titel, String kommentar, String studio,
+            String konsole)
     {
         assert titel != null : "Vorbedingung verletzt: titel != null";
         assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
@@ -52,7 +52,7 @@ public class Videospiel implements Medium
         _studio = studio;
         _konsole = konsole;
     }
-    
+
     public Videospiel(String titel, String kommentar, String konsole)
     {
         this(titel, kommentar, "unknown", konsole);
@@ -102,5 +102,17 @@ public class Videospiel implements Medium
         return _titel;
     }
 
+    @Override
+    public String getFormatiertenString()
+    {
+        String puffer = 
+        "Titel: " + _titel + "\n" +
+        "Studio: "+ _studio + "\n" +
+        "System: " + _konsole + "\n" +
+        "Kommentar: "+ _kommentar + "\n";
+                
+                
+        return puffer;
+    }
 
 }

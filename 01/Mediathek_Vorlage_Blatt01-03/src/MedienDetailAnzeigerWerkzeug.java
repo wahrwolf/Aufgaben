@@ -33,8 +33,11 @@ class MedienDetailAnzeigerWerkzeug
     {
         assert medien != null : "Vorbedingung verletzt: (medien != null)";
         JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
-        // TODO Aufgabe 3.4.2 Die Mediendetails sollen angezeigt werden
         selectedMedienTextArea.setText("");
+        for (Medium medium: medien)
+        {
+            selectedMedienTextArea.append("\n" + medium.getFormatiertenString() + "\n");
+        }
     }
 
     /**
