@@ -1,0 +1,45 @@
+zu 3.1.1
+- nein dyn: Sparkonto, stat Sparkonto
+
+- ja stat Konto, dyn: Girokonto
+
+- (x) ja stat: Konto, dyn: Girokonto
+
+- ""
+
+- Object
+
+- giro
+
+- Sparkonto
+
+Zu 3.1.2
+
+Der Supertyp von Set und List ist Collection und stellt ein Interface für Sammlungen da. weitere implementierungen sind z.b. Map oder Stack
+
+Die Collection implementiert folgende Methoden:
+-	add		um ein Element hinzuzufügen
+-	addAll		um mehre Elemente hinzufügen
+-	clear		um alles zu löschen
+-	contains	prüft auf enhalten
+-	containsAll	""
+-	isEmpty		prüft ob leer
+-	remove		zum Entfernen von Item(s)
+-	removeAll	""
+-	size		gibt die Größe an
+-	toArray		stellt den Inhalt als Array (elementare Collection) dar
+-			wie "" nur mit vorgefertigetem array
+
+Das Set fügt keine weiteren Methoden hinzu, sonder implementiert lediglich die vorgegebenen.
+
+Die List hingegen füg noch die Zugriffsmöglichkeit auf einzelne Elemente via index hinzu.
+
+Operationen können nicht "doppelt" deklariert werden.
+Technisch gesehen sind zwei Methoden mit unterschiedlicher Signatur identisch.
+Inhaltlich gibt es eine Überschneidung bei add, contain und remove.
+
+Bei diesen dreien existiert sowohl eine Methode um ein Element zu verarbeiten, als auch eine um mit einer Collection klar zu kommen.
+
+Die Methoden die "doppelt" erscheinen weil sie z.b sowhol in Collection als auch in Set vorhanden sind, werden nicht doppelt beschrieben, sondern lediglich 
+vererbt.
+
