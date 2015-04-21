@@ -43,3 +43,9 @@ Bei diesen dreien existiert sowohl eine Methode um ein Element zu verarbeiten, a
 Die Methoden die "doppelt" erscheinen weil sie z.b sowhol in Collection als auch in Set vorhanden sind, werden nicht doppelt beschrieben, sondern lediglich 
 vererbt.
 
+zu 3.3.3
+
+instanceof führt einen direkten typtest durch
+wir testen mithilfe von get-Methoden. dies können wir tun, weil wir wissen dass nur der Subtyp diese Antwort liefern wird.
+
+dynamisches binden (oder auch casten) weist der Variable eines bestimmten Types ein object eines subtypes zu.

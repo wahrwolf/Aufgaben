@@ -1,0 +1,38 @@
+ public void setMedien(List<Medium> medien)
+    {
+        assert medien != null : "Vorbedingung verletzt: (medien != null)";
+        JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+        // TODO Aufgabe 3.4.2 Die Mediendetails sollen angezeigt werden
+        selectedMedienTextArea.setText("");
+        for (Medium medium : medien)
+        {
+            selectedMedienTextArea.append("Titel: " + medium.getTitel() + "\n");
+            switch (medium.getMedienBezeichnung())
+            {
+            case "CD":
+            {
+                CD cd = (CD) medium;
+                selectedMedienTextArea.append("Interpret: " + cd.getInterpret()+ "\n");
+                selectedMedienTextArea.append("Laufzeit: "  + cd.getSpiellaenge()+ "\n");
+                break;
+            }
+            case "DVD":
+            {
+                DVD dvd = (DVD) medium;
+                selectedMedienTextArea.append("Regisseur: " + dvd.getRegisseur()+ "\n");
+                selectedMedienTextArea.append("Laufzeit: " + dvd.getLaufzeit()+ "\n");
+                break;
+            }
+            case "Videospiel":
+            {
+                Videospiel game = (Videospiel) medium;
+                selectedMedienTextArea.append("Studio: " + game.getStudio()+ "\n");
+                selectedMedienTextArea.append("Konsole: " + game.getKonsole()+ "\n");
+                break;
+            }
+            }
+
+            selectedMedienTextArea.append("Kommentar: " + medium.getKommentar()+ "\n");
+            selectedMedienTextArea.append("\n \n");
+        }
+    }
