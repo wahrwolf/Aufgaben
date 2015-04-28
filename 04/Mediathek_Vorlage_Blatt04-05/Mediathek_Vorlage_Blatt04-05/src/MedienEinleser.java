@@ -214,28 +214,28 @@ class MedienEinleser
         }
         // TODO für Aufgabe 4.3.4: Kommentarzeichen entfernen um PC- und
         // Konsolenvideospiele in der Mediathek zu haben.
-        // else if (medienBezeichnung.equals("KonsolenVideospiel")
-        // || medienBezeichnung.equals("PCVideospiel"))
-        // {
-        // String system = naechsterToken(tokenizer);
-        //
-        // if (medienBezeichnung.equals("KonsolenVideospiel"))
-        // {
-        // medium = new KonsolenVideospiel(titel, kommentar, system);
-        // }
-        // else if (medienBezeichnung.equals("PCVideospiel"))
-        // {
-        // medium = new PCVideospiel(titel, kommentar, system);
-        // }
-        // }
+         else if (medienBezeichnung.equals("KonsolenVideospiel")
+         || medienBezeichnung.equals("PCVideospiel"))
+         {
+         String system = naechsterToken(tokenizer);
+        
+         if (medienBezeichnung.equals("KonsolenVideospiel"))
+         {
+         medium = new KonsolenVideospiel(titel, kommentar, system);
+         }
+         else if (medienBezeichnung.equals("PCVideospiel"))
+         {
+         medium = new PCVideospiel(titel, kommentar, system);
+         }
+         }
         // TODO für Aufgabe 4.3.4: Diesen else-Zweig auskommentieren, sobald PC-
         // und Konsolenvideospiele existieren.
-        else if (medienBezeichnung.equals("Videospiel"))
-        {
-            String system = naechsterToken(tokenizer);
-
-            medium = new Videospiel(titel, kommentar, system);
-        }
+		// else if (medienBezeichnung.equals("Videospiel"))
+		// {
+		// String system = naechsterToken(tokenizer);
+		//
+		// medium = new AbstractVideospiel(titel, kommentar, system);
+		// }
         return medium;
     }
 

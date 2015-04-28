@@ -84,6 +84,16 @@ public class CDTest
         Medium medium = getMedium();
         assertNotNull(medium.getFormatiertenString());
     }
+    
+    @Test
+    public void testBerechneMietGebuehr()
+    {
+    	assertEquals(_cd1.berechneMietgebuehr(3), new Geldbetrag(3*300));
+    	assertEquals(_cd1.berechneMietgebuehr(1000), new Geldbetrag(1000*300));
+    	assertEquals(_cd1.berechneMietgebuehr(0), new Geldbetrag(0*300));
+    	
+    	//assertFalse(_cd1.berechneMietgebuehr(-1).equals(new Geldbetrag(300)));
+    }
 
     private CD getMedium()
     {
