@@ -97,7 +97,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
     }
 
     @Override
-    public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum)
+    public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum) throws ProtokollierException
     {
         assert sindAlleVerliehen(medien) : "Vorbedingung verletzt: sindVerliehen(medien)";
         assert rueckgabeDatum != null : "Vorbedingung verletzt: rueckgabeDatum != null";
@@ -172,7 +172,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
     }
 
     @Override
-    public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
+    public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum) throws ProtokollierException
     {
         assert kundeImBestand(kunde) : "Vorbedingung verletzt: kundeImBestand(kunde)";
         assert sindAlleNichtVerliehen(medien) : "Vorbedingung verletzt: sindNichtVerliehen(medien) ";

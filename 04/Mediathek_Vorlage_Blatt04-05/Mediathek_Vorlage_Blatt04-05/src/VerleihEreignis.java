@@ -1,7 +1,7 @@
 // XXX 5.1.8
 public enum VerleihEreignis {
 	AUSLEIHE("ausleihe"),
-	RUECKGABE("rueckgab");
+	RUECKGABE("rueckgabe");
 
 	private final String _description;
 	
