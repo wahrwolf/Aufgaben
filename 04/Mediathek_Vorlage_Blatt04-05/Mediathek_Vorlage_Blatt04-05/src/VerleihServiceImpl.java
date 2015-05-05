@@ -27,6 +27,12 @@ class VerleihServiceImpl extends AbstractObservableService implements
      * Der Kundenstamm.
      */
     private KundenstammService _kundenstamm;
+    
+    // XXX 5.1.3
+    /**
+     * Der VerleihProtokollierer
+     */
+    VerleihProtokollierer _protokollierer;
 
     /**
      * Konstruktor. Erzeugt einen neuen VerleihServiceImpl.
@@ -49,6 +55,9 @@ class VerleihServiceImpl extends AbstractObservableService implements
         _verleihkarten = erzeugeVerleihkartenBestand(initialBestand);
         _kundenstamm = kundenstamm;
         _medienbestand = medienbestand;
+        
+        _protokollierer = new VerleihProtokollierer();
+
     }
 
     /**
@@ -93,8 +102,12 @@ class VerleihServiceImpl extends AbstractObservableService implements
         assert sindAlleVerliehen(medien) : "Vorbedingung verletzt: sindVerliehen(medien)";
         assert rueckgabeDatum != null : "Vorbedingung verletzt: rueckgabeDatum != null";
 
+        // XXX 5.1.3
+        // implementire rückgabe für Protokollant
+        
         for (Medium medium : medien)
         {
+            _protokollierer.protokolliere(VerleihEreignis.RUECKGABE, getVerleihkarteFuer(medium));
             _verleihkarten.remove(medium);
         }
 
@@ -166,12 +179,17 @@ class VerleihServiceImpl extends AbstractObservableService implements
         assert ausleihDatum != null : "Vorbedingung verletzt: ausleihDatum != null";
         assert istVerleihenMoeglich(kunde, medien) : "Vorbedingung verletzt:  istVerleihenMoeglich(kunde, medien)";
 
+        
+        // XXX 5.1.3
+        // implementiere Protokollierer in Verleih
+        
         for (Medium medium : medien)
         {
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
 
             _verleihkarten.put(medium, verleihkarte);
+            _protokollierer.protokolliere(VerleihEreignis.AUSLEIHE, verleihkarte);
         }
 
         informiereUeberAenderung();

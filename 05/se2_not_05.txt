@@ -1,0 +1,3 @@
+zu 5.1.6
+-rückmeldung über gui (...)
+-standardfall (z.b. temp+random... als puffer)
